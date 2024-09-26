@@ -1,13 +1,17 @@
 import java.util.Scanner;
 
-public class Main {
+public class Main 
+{
     private static final Scanner in = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        while (true) {
+    public static void main(String[] args) 
+    {
+        while (true) 
+        {
             System.out.print("Введите номер задачи");
             int num = in.nextInt();
-            switch (num) {
+            switch (num) 
+            {
                 case 1:
                     task1();
                 case 2:
@@ -22,14 +26,19 @@ public class Main {
         }
     }
 
-    static void task1() {
+    static void task1() 
+    {
         System.out.print("Введите натуральное число:");
         int n = in.nextInt();
         int step = 0;
-        while (n > 1) {
-            if (n % 2 == 0) {
+        while (n > 1) 
+        {
+            if (n % 2 == 0) 
+            {
                 n = n / 2;
-            } else {
+            } 
+            else 
+            {
                 n = (3 * n) + 1;
             }
             step++;
@@ -39,16 +48,21 @@ public class Main {
 
     }
 
-    static void task2() {
+    static void task2() 
+    {
         System.out.println("Введите натуральное число:");
         int n = in.nextInt();
         int result = 0;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) 
+        {
             int actualNum = in.nextInt();
-            if (i % 2 == 0) {
+            if (i % 2 == 0) 
+            {
                 result += actualNum;
-            } else {
+            } 
+            else 
+            {
                 result -= actualNum;
             }
         }
@@ -56,7 +70,8 @@ public class Main {
         System.out.println("Сумма ряда: " + result);
     }
 
-    static void task3() {
+    static void task3() 
+    {
 
         System.out.println("Введите координаты клада: ");
         int endX = in.nextInt();
@@ -81,7 +96,8 @@ public class Main {
             int steps = in.nextInt();
             in.nextLine();
 
-            switch (command) {
+            switch (command) 
+            {
                 case "север":
                     y_0 += steps;
                     break;
@@ -100,8 +116,7 @@ public class Main {
             }
 
             count++;
-
-            // Проверяем, достигли ли мы клада
+            
             if (x_0 == endX && y_0 == endY)
             {
                 minCommand = Math.min(minCommand, count);
@@ -123,15 +138,15 @@ public class Main {
     {
         System.out.println("Введите кол-во дорог");
         int numRoad = in.nextInt();
-        int maxHeight = 0; // Максимально допустимая высота для грузовика
-        int finalRoad = 0; // Номер дороги с максимальной высотой
+        int maxHeight = 0; 
+        int finalRoad = 0; 
 
         for (int i = 1; i <= numRoad; i++)
         {
             System.out.println("Введите кол-во туннелей для " + i + " дороги");
             int numSub = in.nextInt();
             System.out.println("Введите высоты");
-            int minHeight = Integer.MAX_VALUE; // Минимальная высота для текущей дороги
+            int minHeight = Integer.MAX_VALUE; 
 
             for (int j = 0; j < numSub; j++)
             {
@@ -157,7 +172,6 @@ public class Main {
     {
         System.out.println("Введите целое трехзначное число");
         int numb = in.nextInt();
-
         int digit1 = numb / 100;
         int digit2 = (numb / 10) % 10;
         int digit3 = numb % 10;
