@@ -16,8 +16,7 @@ public class Main {
         boolean isGame = true;
         Scanner in = new Scanner(System.in);
 
-
-
+        
         while (isGame){
             board.print_board();
             System.out.println();
@@ -29,6 +28,13 @@ public class Main {
                 case 'b': System.out.println("Ход черных"); break;
             }
 
+            if (board.isKingInCheck(board.getColorGame())) {
+                System.out.println("Шах");
+            }
+            if (board.isCheckmate(board.getColorGame())) {
+                System.out.println("Мат! Игра завершена.");
+                break;
+            }
             System.out.print("Введите ход: ");
 
             String inputLine = in.nextLine();
@@ -62,6 +68,8 @@ public class Main {
                 case 'w': board.setColorGame('b');break;
                 case 'b': board.setColorGame('w');break;
             }
+
+
         }
         //test
 
